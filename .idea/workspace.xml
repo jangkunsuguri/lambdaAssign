@@ -95,7 +95,7 @@
     </option>
   </component>
   <component name="RunManager" selected="Kotlin.Assignment4Kt">
-    <configuration name="AppKt" type="JetRunConfigurationType" factoryName="Kotlin" temporary="true" nameIsGenerated="true">
+    <configuration name="AppKt" type="JetRunConfigurationType" temporary="true" nameIsGenerated="true">
       <module name="MyFirstApp" />
       <option name="VM_PARAMETERS" />
       <option name="PROGRAM_PARAMETERS" />
@@ -108,7 +108,7 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="Assignment3Kt" type="JetRunConfigurationType" factoryName="Kotlin" temporary="true" nameIsGenerated="true">
+    <configuration name="Assignment3Kt" type="JetRunConfigurationType" temporary="true" nameIsGenerated="true">
       <module name="MyFirstApp" />
       <option name="VM_PARAMETERS" />
       <option name="PROGRAM_PARAMETERS" />
@@ -121,7 +121,7 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="Assignment4Kt" type="JetRunConfigurationType" factoryName="Kotlin" temporary="true" nameIsGenerated="true">
+    <configuration name="Assignment4Kt" type="JetRunConfigurationType" temporary="true" nameIsGenerated="true">
       <module name="MyFirstApp" />
       <option name="VM_PARAMETERS" />
       <option name="PROGRAM_PARAMETERS" />
