@@ -16,8 +16,9 @@ fun main(args: Array<String>){
     println("Quicksort Ascending Order:")
     println(quicksort(listOf(2,5,3,1,4), {x:Int, y:Int-> x < y}))
 
-/*    println("Quicksort Descending Order: ")
-    println(quicksort(listOf(2,5,3,1,4), {x:Int, y:Int-> x > y}))*/
+    println("Quicksort Descending Order: ")
+    println(quicksort(listOf(2,5,3,1,4), {x:Int, y:Int-> x > y}))
+    
 /*    println(partition(2, listOf(5,3,1,4),{x:Int, y:Int-> x > y}))
     println(partition(2, listOf(5,3,1,4),{x:Int, y:Int-> x < y}))*/
 }
@@ -57,19 +58,27 @@ fun quicksort(L: List<Int>, comp: (x:Int, y: Int) -> Boolean): List<Int>{
         return L
     else {
         val pivot = L[0]
-        val left = partition(pivot, L.subList(1, L.size), comp)
-        val right = partition(pivot, L.subList(1, L.size), comp)
+        val left = leftpartition(pivot, L.subList(1, L.size), comp)
+        val right = rightpartition(pivot, L.subList(1, L.size), comp)
         return quicksort(left, comp) + pivot + quicksort(right, comp)
     }
 }
 
-fun partition(e: Int, L: List<Int>, comp: (x: Int, y: Int) -> Boolean): List<Int>{
+fun leftpartition(e: Int, L: List<Int>, comp: (x: Int, y: Int) -> Boolean): List<Int>{
     if (L.isEmpty())
         return listOf()
     if (comp(L[0],e))
-        return listOf(L[0]) + partition(e, L.subList(1,L.size), comp)
+        return listOf(L[0]) + leftpartition(e, L.subList(1,L.size), comp)
     else
-        return partition(e, L.subList(1, L.size), comp)
+        return leftpartition(e, L.subList(1, L.size), comp)
+}
+fun rightpartition(e: Int, L: List<Int>, comp: (x: Int, y: Int) -> Boolean): List<Int>{
+    if (L.isEmpty())
+        return listOf()
+    if (!comp(L[0],e))
+        return listOf(L[0]) + rightpartition(e, L.subList(1,L.size), comp)
+    else
+        return rightpartition(e, L.subList(1, L.size), comp)
 }
 
 fun lessSorting(e: Int, L: List<Int>): List<Int>{
