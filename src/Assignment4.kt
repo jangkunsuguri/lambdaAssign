@@ -1,5 +1,4 @@
 fun main(args: Array<String>){
-/*
     println("fun less:")
     println(less("no", listOf("not", "yes", "a", "hello")))
 
@@ -11,16 +10,12 @@ fun main(args: Array<String>){
 
     println("fun compare (more):")
     println(compare("no", listOf("not", "yes", "a", "hello"), {x: String, y:String -> x.length > y.length}))
-*/
 
     println("Quicksort Ascending Order:")
     println(quicksort(listOf(2,5,3,1,4), {x:Int, y:Int-> x < y}))
 
     println("Quicksort Descending Order: ")
     println(quicksort(listOf(2,5,3,1,4), {x:Int, y:Int-> x > y}))
-    
-/*    println(partition(2, listOf(5,3,1,4),{x:Int, y:Int-> x > y}))
-    println(partition(2, listOf(5,3,1,4),{x:Int, y:Int-> x < y}))*/
 }
 //no. 1 less function
 fun less(e: String, L: List<String>): List<String>{
@@ -79,22 +74,4 @@ fun rightpartition(e: Int, L: List<Int>, comp: (x: Int, y: Int) -> Boolean): Lis
         return listOf(L[0]) + rightpartition(e, L.subList(1,L.size), comp)
     else
         return rightpartition(e, L.subList(1, L.size), comp)
-}
-
-fun lessSorting(e: Int, L: List<Int>): List<Int>{
-    if (L.isEmpty())
-        return listOf()
-    if (L[0] < e)
-        return listOf(L[0]) + lessSorting(e, L.subList(1,L.size))
-    else
-        return (lessSorting(e, L.subList(1,L.size)))
-}
-
-fun moreSorting(e: Int, L: List<Int>): List<Int>{
-    if (L.isEmpty())
-        return listOf()
-    if (L[0] > e)
-        return listOf(L[0]) + moreSorting(e, L.subList(1,L.size))
-    else
-        return (moreSorting(e, L.subList(1,L.size)))
 }
